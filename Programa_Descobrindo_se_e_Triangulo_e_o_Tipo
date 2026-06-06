@@ -1,0 +1,37 @@
+# Programa_Descobrindo_se_e_Triangulo_e_o_Tipo
+"""
+Dados três valores positivos, A, B e C, construir um programa em Python que verifica se os mesmos podem ser os comprimentos dos lados de um triângulo.
+
+Se forem, verificar e imprimir se o triângulo é equilátero, isósceles ou escaleno.
+
+Informar se não formarem nenhum triângulo.
+
+Obs: para ser triângulo lado_maior < lado_menor1 + lado_menor2
+	Triângulo escaleno: os três lados são diferentes entre si
+	Triângula isósceles: dois lados são iguais e um é diferente
+"""
+print('Descubra se três retas podem formar um triângulo entre si e, caso formem, se este é escaleno, equilátero ou isósceles')
+
+# Entrada das variáveis
+a = float(input('Digite o tamanho da reta a: '))
+b = float(input('Digite o tamanho da reta b: '))
+c = float(input('Digite o tamanho da reta c: '))
+
+# Cria uma lista com as variáveis informadas e ordena os valores em ordem decrescente
+lista_lados = [a, b, c]
+lista_decrescente = sorted (lista_lados, reverse=True)
+
+# Estipule as condições - por fim, determine se é um triângulo
+if lista_decrescente [0] <= lista_decrescente [1] + lista_decrescente[2]:
+    if  lista_decrescente [0] == lista_decrescente [1] == lista_decrescente [2]:
+        print('As três retas formam um triângulo equilátero')
+    elif  lista_decrescente [0] == lista_decrescente [1] or lista_decrescente [1] == lista_decrescente [2]:
+        print('As três retas formam um triângulo isósceles')
+    else:
+        print('As três retas formam um triângulo escaleno')
+else:
+    print('As três retas não formam um triângulo')
+
+
+
+
